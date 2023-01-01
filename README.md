@@ -1,5 +1,7 @@
 # AI Hospital - Desktop Application
 
+Desktop application that displays counties, diseases and viruses, symptoms and people suffering from certain diseases along with many other functionalities.
+
 In App.config please enter your credentials to connect to your database.
 
 Project Screenshots: 
