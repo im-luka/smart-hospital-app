@@ -1,0 +1,253 @@
+﻿<Window x:Class="WPF_AI.Hospital.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_AI.Hospital"
+        mc:Ignorable="d"
+        Height="650" Width="920"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen">
+
+    <Border Background="#FF07032E"
+            CornerRadius="40"
+            MouseDown="Border_MouseDown">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Top"
+                        Grid.Row="0" Grid.Column="1"
+                        Margin="0 0 20 0">
+                <Button Width="20" Height="20"
+                        Content="_"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        Foreground="Yellow"
+                        FontWeight="Bold"
+                        Click="MinimizeButton_Click" />
+                <Button Width="20" Height="20"
+                        Content="☐"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        Foreground="Yellow"
+                        FontWeight="Bold"
+                        Click="MaximizeButton_Click" />
+                <Button Width="20" Height="20"
+                        Content="✘"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        Foreground="Yellow"
+                        FontWeight="Bold"
+                        Click="CloseButton_Click" />
+            </StackPanel>
+
+            <TextBlock Text="AI Hospital"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Foreground="WhiteSmoke"
+                   FontSize="25"
+                   FontWeight="Bold"/>
+            <WrapPanel Orientation="Vertical" HorizontalAlignment="Left" Height="575" Grid.Row="1" VerticalAlignment="Top" Width="200" Background="#FF01071F">
+                <Button Width="200" Height="50" Margin="0 10 0 10" Foreground="#FF0FC9C0" Background="#00000000" FontSize="19" FontFamily="Tw Cen MT Condensed Extra Bold" HorizontalContentAlignment="Center" HorizontalAlignment="Center" IsManipulationEnabled="True" BorderThickness="10,0,0,0" BorderBrush="#FF320404">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="0 0 5 0" VerticalAlignment="Bottom">Home</TextBlock>
+                        <Image Source="/images/home.png" Width="40" Height="40"></Image>
+                    </StackPanel>
+                </Button>
+                <Button Width="200" Height="50" Margin="0 10 0 10" Foreground="#FF0FC9C0" Background="#00000000" FontSize="19" FontFamily="Tw Cen MT Condensed Extra Bold" HorizontalContentAlignment="Center" HorizontalAlignment="Center" IsManipulationEnabled="True" BorderThickness="10,0,0,0" BorderBrush="#FF320404" Click="CountiesButton_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="0 0 5 0" VerticalAlignment="Bottom">Counties</TextBlock>
+                        <Image Source="/images/county.png" Width="45" Height="45"></Image>
+                    </StackPanel>
+                </Button>
+                <Button Width="200" Height="50" Margin="0 10 0 10" Foreground="#FF0FC9C0" Background="#00000000" FontSize="19" FontFamily="Tw Cen MT Condensed Extra Bold" HorizontalContentAlignment="Center" HorizontalAlignment="Center" IsManipulationEnabled="True" BorderThickness="10,0,0,0" BorderBrush="#FF320404" Click="SymptomsButton_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="0 0 5 0" VerticalAlignment="Bottom">Symptoms</TextBlock>
+                        <Image Source="/images/symptom.png" Width="50" Height="50"></Image>
+                    </StackPanel>
+                </Button>
+                <Button Width="200" Height="50" Margin="0 10 0 10" Foreground="#FF0FC9C0" Background="#00000000" FontSize="19" FontFamily="Tw Cen MT Condensed Extra Bold" HorizontalContentAlignment="Center" HorizontalAlignment="Center" IsManipulationEnabled="True" BorderThickness="10,0,0,0" BorderBrush="#FF320404" Click="DiseasesButton_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="0 0 5 0" VerticalAlignment="Bottom">Diseases</TextBlock>
+                        <Image Source="/images/disease.png" Width="50" Height="40"></Image>
+                    </StackPanel>
+                </Button>
+                <Button Width="200" Height="50" Margin="0 10 0 10" Foreground="#FF0FC9C0" Background="#00000000" FontSize="19" FontFamily="Tw Cen MT Condensed Extra Bold" HorizontalContentAlignment="Center" HorizontalAlignment="Center" IsManipulationEnabled="True" BorderThickness="10,0,0,0" BorderBrush="#FF320404" Click="VirusesButton_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="0 0 5 0" VerticalAlignment="Bottom">Viruses</TextBlock>
+                        <Image Source="/images/virus.png" Width="50" Height="45"></Image>
+                    </StackPanel>
+                </Button>
+                <Button Width="200" Height="50" Margin="0 10 0 10" Foreground="#FF0FC9C0" Background="#00000000" FontSize="19" FontFamily="Tw Cen MT Condensed Extra Bold" HorizontalContentAlignment="Center" HorizontalAlignment="Center" IsManipulationEnabled="True" BorderThickness="10,0,0,0" BorderBrush="#FF320404" Click="PeopleButton_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="0 0 5 0" VerticalAlignment="Bottom">People</TextBlock>
+                        <Image Source="/images/people.png" Width="50" Height="45"></Image>
+                    </StackPanel>
+                </Button>
+                <Button Width="200" Height="50" Margin="0 10 0 10" Foreground="#FF0FC9C0" Background="#00000000" FontSize="19" FontFamily="Tw Cen MT Condensed Extra Bold" HorizontalContentAlignment="Center" HorizontalAlignment="Center" IsManipulationEnabled="True" BorderThickness="10,0,0,0" BorderBrush="#FF320404" Click="ClinicButton_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="0 0 5 0" VerticalAlignment="Bottom">Clinic For Viruses</TextBlock>
+                        <Image Source="/images/clinic.png" Width="45" Height="50"></Image>
+                    </StackPanel>
+                </Button>
+            </WrapPanel>
+
+            <TextBox x:Name="tbSearch" Grid.Column="1" Width="250" Height="40" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10" 
+                     Background="#FF292929" BorderBrush="Black" Foreground="White" SelectionBrush="#FF085999" 
+                     VerticalContentAlignment="Center" Padding="8,0,0,0" />
+            <TextBlock Grid.Column="1" IsHitTestVisible="False" Text="Search..." FontStyle="Italic" Padding="8 0 0 0" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" Foreground="DarkGray">
+                <TextBlock.Style>
+                    <Style TargetType="{x:Type TextBlock}">
+                        <Setter Property="Visibility" Value="Collapsed"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Text, ElementName=tbSearch}" Value="">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+            <Button Grid.Column="1" Width="100" Height="35" Margin="0 0 50 0" BorderBrush="Yellow" Background="Transparent" Content="Search" Foreground="White" FontSize="17"/>
+
+
+            <StackPanel Grid.Row="1" Grid.Column="1">
+                <TextBlock Text="Home Page"
+                   Foreground="WhiteSmoke"
+                   FontSize="30"
+                   HorizontalAlignment="Left"
+                   Margin="20 10 0 0"/>
+
+                <StackPanel Orientation="Horizontal" Margin="10 8 0 0">
+                    <Border Width="400"
+                            Height="200"
+                            Panel.ZIndex="1">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,3">
+                                <GradientStop Color="#FF59CFF5" Offset="0.0"/>
+                                <GradientStop Color="#FF108FB8" Offset="1.0"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+
+                        <Border.Clip>
+                            <RectangleGeometry RadiusX="10"
+                                                RadiusY="10"
+                                                Rect="0 0 400 200" />
+                        </Border.Clip>
+
+                        <Grid>
+                            <StackPanel Panel.ZIndex="1">
+                                <TextBlock Text="We offer a range of bespoke&#x0a;treatments for the purpose of&#x0a;treating patients"
+                                            Foreground="WhiteSmoke"
+                                            FontSize="27"
+                                            Margin="20 10 0 0"/>
+
+                                <TextBlock Text="Don't be afraid to confide in us!"
+                                            Foreground="WhiteSmoke"
+                                            FontSize="18"
+                                            Margin="20 10 0 0"/>
+                            </StackPanel>
+
+                            <Image Height="244" Source="/images/logo.png" Panel.ZIndex="0"
+                                    VerticalAlignment="Bottom" Margin="213,0,-40,-59" RenderTransformOrigin="0.5,0.5">
+                                <Image.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="-13.697"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </Image.RenderTransform>
+                            </Image>
+                        </Grid>
+                    </Border>
+
+                    <Border Width="700" 
+                            Height="235"
+                            CornerRadius="30"
+                            Margin="-391 0 0 -35"
+                            Panel.ZIndex="0">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,3">
+                                <GradientStop Color="#FF0E3947" Offset="0.0"/>
+                                <GradientStop Color="#FF051130" Offset="1.0"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top">
+                            <TextBlock Text="Do&#xA;something&#xA;great" Foreground="White" Margin="0,0,10,0" FontFamily="Imprint MT Shadow" FontSize="20" FontStyle="Italic" TextDecorations="Underline" Opacity="0.7" Padding="0" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            <Image Source="/images/hospital-cover.jpg"  VerticalAlignment="Top" Width="191"/>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" Grid.Column="1" Margin="20 60 0 0">
+                    <StackPanel.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="Margin" Value="15 0 0 0" />
+                        </Style>
+                    </StackPanel.Resources>
+
+                    <TextBlock Text="About us"
+                                Foreground="WhiteSmoke"
+                                FontSize="20"
+                                HorizontalAlignment="Left"
+                                Margin="0 3 0 3"/>
+
+                    <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
+                        <Border Width="150"
+                                Height="150"
+                                Background="White"
+                                CornerRadius="15" 
+                                >
+                            <StackPanel>
+                                <Image Source="/images/help.png" Width="75" Height="75" Margin="0,10,0,0"></Image>
+                                <TextBlock Text="Over 20 years&#x0a;of expert care" Foreground="#FF051042" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Segoe UI Historic" FontSize="15" TextDecorations="{x:Null}" FontStyle="Italic" Margin="0,15,0,0" />
+                            </StackPanel>
+                        </Border>
+                        <Border Width="150"
+                                Height="150"
+                                Background="White"
+                                CornerRadius="15">
+                            <StackPanel>
+                                <Image Source="/images/service.png" Width="75" Height="75" Margin="0,10,0,0"></Image>
+                                <TextBlock Text="Best Clinic Group in&#x0a;Croatia and beyond" Foreground="#FF051042" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Segoe UI Historic" FontSize="15" TextDecorations="{x:Null}" FontStyle="Italic" Margin="0,15,0,0" />
+                            </StackPanel>
+                        </Border>
+                        <Border Width="150"
+                                Height="150"
+                                Background="White"
+                                CornerRadius="15">
+                            <StackPanel>
+                                <Image Source="/images/location.png" Width="75" Height="75" Margin="0,10,0,0"></Image>
+                                <TextBlock Text="Nationwide Clinics" Foreground="#FF051042" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Segoe UI Historic" FontSize="15" TextDecorations="{x:Null}" FontStyle="Italic" Margin="0,15,0,0" />
+                            </StackPanel>
+                        </Border>
+                        <Border Width="150"
+                                Height="150"
+                                Background="White"
+                                CornerRadius="15">
+                            <StackPanel>
+                                <Image Source="/images/best.png" Width="75" Height="75" Margin="0,10,0,0"></Image>
+                                <TextBlock Text="Award winning&#x0a;treatment plans" Foreground="#FF051042" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Segoe UI Historic" FontSize="15" TextDecorations="{x:Null}" FontStyle="Italic" Margin="0,15,0,0" />
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+
+                </StackPanel>
+            </StackPanel>
+
+        </Grid>
+    </Border>
+</Window>
